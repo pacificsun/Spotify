@@ -3,12 +3,12 @@ import { View, Text, FlatList } from 'react-native';
 
 import styles from './styles';
 
-import { AlbumType } from '../../types';
-import Album from '../Album';
+import { Album } from '../../types';
+import AlbumComponent from '../Album';
 
 export type AlbumCategoryProps = {
   title: String;
-  albums: [AlbumType];
+  albums: [Album];
 };
 
 const AlbumCategory = (props: AlbumCategoryProps) => {
@@ -17,7 +17,7 @@ const AlbumCategory = (props: AlbumCategoryProps) => {
       <Text style={styles.title}>{props.title}</Text>
       <FlatList
         data={props.albums}
-        renderItem={({ item }) => <Album album={item} />}
+        renderItem={({ item }) => <AlbumComponent album={item} />}
         keyExtractor={(item) => item.id}
         horizontal
       />
