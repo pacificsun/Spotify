@@ -24,3 +24,10 @@ export type Album ={
   imageUri: String;
   artistsHeadline: String;
 }
+
+export type Song ={
+  id: String,
+  imageUri: String,
+  title: String,
+  artist: String
+}
